@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:share/share.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 class view extends StatefulWidget {
@@ -39,7 +40,9 @@ class _viewState extends State<view> {
           Padding(
             padding: EdgeInsets.only(right: 30),
             child: GestureDetector(
-              onTap: (() {}),
+              onTap: (() {
+                Share.share(finalUrl);
+              }),
               child: Icon(Icons.share),
             ),
           ),

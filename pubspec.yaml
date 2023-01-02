@@ -40,6 +40,7 @@ dependencies:
   http: ^0.13.5
   intl:
   webview_flutter:
+  share:
 
 dev_dependencies:
   flutter_test:
