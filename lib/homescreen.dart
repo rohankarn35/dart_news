@@ -19,17 +19,19 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: DefaultTabController(
         length: 6,
         child: Scaffold(
           appBar: AppBar(
             toolbarHeight: 80,
-            title: GradientText(
+            title: Text(
               "Dart News",
-              textAlign: TextAlign.justify,
-              gradientType: GradientType.linear,
-              colors: [Colors.red, Colors.blue, Colors.deepPurple],
-              textScaleFactor: 1.3,
+              style: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+                fontSize: 30,
+              ),
             ),
             bottom: TabBar(
                 dragStartBehavior: DragStartBehavior.start,

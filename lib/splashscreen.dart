@@ -1,9 +1,9 @@
-import 'dart:js';
-
 import 'package:dart_news/homescreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:simple_gradient_text/simple_gradient_text.dart';
+import 'package:animated_text_kit/animated_text_kit.dart';
 
 class Splash extends StatefulWidget {
   const Splash({super.key});
@@ -21,16 +21,26 @@ class _SplashState extends State<Splash> {
   }
 
   _navigate() async {
-    // await Future.delayed(Duration(milliseconds: 1000), () {});
-    // Navigator.pushReplacement(
-    //     this.context, MaterialPageRoute(builder: ((context) => HomeScreen())));
+    await Future.delayed(Duration(seconds: 5), () {});
+    Navigator.pushReplacement(
+        this.context, MaterialPageRoute(builder: ((context) => HomeScreen())));
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        child: Text("Splash Screen"),
+      backgroundColor: Colors.black38,
+      body: Center(
+        child: Container(
+            child: AnimatedTextKit(animatedTexts: [
+          TypewriterAnimatedText("Dart News",
+              textStyle: const TextStyle(
+                fontSize: 32.0,
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+              ),
+              speed: const Duration(milliseconds: 500))
+        ])),
       ),
     );
   }
