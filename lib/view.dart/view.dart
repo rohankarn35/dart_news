@@ -14,7 +14,7 @@ class view extends StatefulWidget {
   State<view> createState() => _viewState();
 }
 
-class _viewState extends State<view> {
+class _viewState extends State<view> with AutomaticKeepAliveClientMixin {
   late String finalUrl;
   final Completer<WebViewController> controller =
       Completer<WebViewController>();
@@ -60,4 +60,7 @@ class _viewState extends State<view> {
       ),
     );
   }
+
+  @override
+  bool get wantKeepAlive => true;
 }
